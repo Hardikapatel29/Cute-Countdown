@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You + Me Counter | Romantic Couple Milestone Tracker</title>
+  <meta name="description" content="Track your romantic milestones and shared moments with You + Me Counter. A beautiful couple-focused app for celebrating your relationship journey together.">
+  <meta name="keywords" content="couple counter, romantic app, relationship tracker, milestone counter, love counter, couple goals">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="You + Me Counter | Romantic Couple Milestone Tracker">
+  <meta property="og:description" content="Track your romantic milestones and shared moments with You + Me Counter. A beautiful couple-focused app for celebrating your relationship journey together.">
+  
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Jua', cursive, Arial, sans-serif;
+      background-image: url('../assets/images/img_geminigeneratedimageswgir6swgir6swgi_3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Layout components */
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+    }
+    
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      flex: 1;
+      position: relative;
+    }
+    
+    .bottom-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      gap: 80px;
+      margin-top: 400px;
+      padding: 0 16px;
+    }
+    
+    /* Typography */
+    .main-title {
+      font-size: 64px;
+      font-family: 'Jua', cursive, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 80px;
+      text-align: left;
+      color: #b0fcff;
+      width: 100%;
+      margin-left: 58px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Interactive components */
+    .play-button {
+      align-self: flex-end;
+      width: auto;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      border-radius: 50%;
+    }
+    
+    .play-button:hover {
+      transform: scale(1.1);
+      background-color: rgba(176, 252, 255, 0.2);
+    }
+    
+    .play-button:focus {
+      outline: 2px solid #b0fcff;
+      outline-offset: 4px;
+    }
+    
+    .play-button:active {
+      transform: scale(0.95);
+    }
+    
+    .play-icon {
+      width: 66px;
+      height: 64px;
+      display: block;
+    }
+    
+    /* Responsive media queries */
+    @media (min-width: 640px) {
+      .bottom-section {
+        gap: 120px;
+        margin-top: 500px;
+        padding: 0 24px;
+      }
+      
+      .main-title {
+        font-size: 96px;
+        line-height: 120px;
+        margin-left: 87px;
+      }
+      
+      .play-icon {
+        width: 99px;
+        height: 96px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .bottom-section {
+        gap: 140px;
+        margin-top: 600px;
+        padding: 0 32px;
+      }
+      
+      .main-title {
+        font-size: 112px;
+        line-height: 140px;
+        margin-left: 101px;
+        width: 70%;
+      }
+      
+      .play-icon {
+        width: 115px;
+        height: 112px;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .bottom-section {
+        gap: 160px;
+        margin-top: 824px;
+        padding: 0 40px;
+      }
+      
+      .main-title {
+        font-size: 128px;
+        line-height: 160px;
+        margin-left: 116px;
+        width: 70%;
+      }
+      
+      .play-icon {
+        width: 132px;
+        height: 128px;
+      }
+    }
+    
+    @media (min-width: 1280px) {
+      .bottom-section {
+        padding: 0 48px;
+      }
+    }
+    
+    @media (min-width: 1536px) {
+      .bottom-section {
+        padding: 0 56px;
+      }
+    }
+  </style>
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fromanticm5710back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body>
+  <main class="main-container">
+    <div class="content-wrapper">
+      <section class="bottom-section">
+        <h1 class="main-title">You + Me Counter</h1>
+        <button class="play-button" type="button" aria-label="Start counter" id="playButton">
+          <img src="../assets/images/img_play_circle.svg" alt="Play button to start counter" class="play-icon">
+        </button>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Add click event listener to the play button to navigate to FirstKissDatingAppLanding page
+    document.addEventListener('DOMContentLoaded', function() {
+      const playButton = document.getElementById('playButton');
+      
+      if (playButton) {
+        playButton.addEventListener('click', function() {
+          // Navigate to the FirstKissDatingAppLanding page
+          window.location.href = 'FirstKissDatingAppLanding.html';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

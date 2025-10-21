@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engagement | Future Milestone Counter</title>
+  <meta name="description" content="Celebrate your upcoming engagement milestone with a beautiful countdown to August 24, 2025 and anticipation for this special moment.">
+  <meta name="keywords" content="engagement, romantic milestone, couple counter, engagement countdown, relationship tracker, future anniversary">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Engagement | Future Milestone Counter">
+  <meta property="og:description" content="Celebrate your upcoming engagement milestone with a beautiful countdown to August 24, 2025.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Jua', cursive;
+      background-image: url('../assets/images/img_geminigeneratedimageswgir6swgir6swgi_3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    /* Engagement sparkle effect */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 30%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    /* Layout components */
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+    }
+    
+    /* Back button */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 215, 0, 0.8);
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-family: 'Jua', cursive;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    }
+    
+    .back-button:hover {
+      background: rgba(255, 215, 0, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    }
+    
+    /* Title section */
+    .title-section {
+      text-align: center;
+      margin-bottom: 80px;
+      margin-top: 60px;
+    }
+    
+    .page-title {
+      font-size: 96px;
+      font-family: 'Jua', cursive;
+      font-weight: 400;
+      line-height: 120px;
+      color: #FFD700;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.5);
+      margin-bottom: 20px;
+      animation: sparkle 3s ease-in-out infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.5); }
+      50% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.4); }
+    }
+    
+    .milestone-date {
+      font-size: 24px;
+      font-family: 'Jua', cursive;
+      color: #FFD700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Counter sections */
+    .counters-container {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      width: 100%;
+    }
+    
+    .counter-section {
+      background: rgba(255, 215, 0, 0.15);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 30px;
+      padding: 40px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+    }
+    
+    .counter-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+      background: rgba(255, 215, 0, 0.2);
+    }
+    
+    .counter-title {
+      font-size: 36px;
+      font-family: 'Jua', cursive;
+      color: #FFD700;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .counter-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .time-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 120px;
+    }
+    
+    .time-number {
+      font-size: 48px;
+      font-family: 'Jua', cursive;
+      color: #FFD700;
+      font-weight: 400;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 8px;
+    }
+    
+    .time-label {
+      font-size: 18px;
+      font-family: 'Jua', cursive;
+      color: #8B4513;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    
+    /* Special styling for upcoming engagement */
+    .upcoming-section {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 255, 255, 0.1));
+      border: 3px solid rgba(255, 215, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .upcoming-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      animation: shine 4s ease-in-out infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+      100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    }
+    
+    .upcoming-section .time-number {
+      font-size: 56px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .anticipation-message {
+      background: rgba(255, 215, 0, 0.1);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .anticipation-text {
+      font-size: 24px;
+      font-family: 'Jua', cursive;
+      color: #FFD700;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      line-height: 1.4;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 20px 15px;
+      }
+      
+      .page-title {
+        font-size: 64px;
+        line-height: 80px;
+      }
+      
+      .counter-title {
+        font-size: 28px;
+      }
+      
+      .time-number {
+        font-size: 36px;
+      }
+      
+      .upcoming-section .time-number {
+        font-size: 42px;
+      }
+      
+      .counter-display {
+        gap: 20px;
+      }
+      
+      .time-unit {
+        min-width: 100px;
+      }
+      
+      .anticipation-text {
+        font-size: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .page-title {
+        font-size: 48px;
+        line-height: 60px;
+      }
+      
+      .counter-section {
+        padding: 30px 20px;
+      }
+      
+      .counter-title {
+        font-size: 24px;
+      }
+      
+      .time-number {
+        font-size: 32px;
+      }
+      
+      .upcoming-section .time-number {
+        font-size: 38px;
+      }
+      
+      .anticipation-text {
+        font-size: 18px;
+      }
+    }
+  </style>
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fromanticm5710back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body>
+  <button class="back-button" id="backButton" aria-label="Go back to landing page">← Back</button>
+  
+  <main class="main-container">
+    <button class="back-button" onclick="window.location.href='FirstKissDatingAppLanding.html'" aria-label="Go back to main page">
+      ← Back
+    </button>
+
+    <div class="content-wrapper">
+      <section class="title-section">
+        <h1 class="page-title">Engagement</h1>
+        <p class="milestone-date">August 24, 2025</p>
+      </section>
+      
+      <div class="counters-container">
+        <section class="counter-section" id="yearsPastSection">
+          <h2 class="counter-title">Years Past:</h2>
+          <div class="counter-display">
+            <div class="time-unit">
+              <span class="time-number" id="yearsPast">00</span>
+              <span class="time-label">Years</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-number" id="daysPast">00</span>
+              <span class="time-label">Days</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-number" id="hoursPast">00</span>
+              <span class="time-label">Hours</span>
+            </div>
+          </div>
+        </section>
+        
+        <section class="counter-section upcoming-section">
+          <h2 class="counter-title">Days left for engagement:</h2>
+          <div class="counter-display">
+            <div class="time-unit">
+              <span class="time-number" id="daysLeft">00</span>
+              <span class="time-label">Days</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-number" id="hoursLeft">00</span>
+              <span class="time-label">Hours</span>
+            </div>
+          </div>
+        </section>
+        
+        <div class="anticipation-message">
+          <p class="anticipation-text">✨ The special moment awaits! ✨<br>Get ready for this beautiful milestone in your love story.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Engagement date: August 24, 2025
+    const engagementDate = new Date('2025-08-24T00:00:00');
+    
+    function updateCounters() {
+      const now = new Date();
+      
+      // Check if engagement date has passed
+      if (now >= engagementDate) {
+        // Show years past since engagement
+        const timePassed = now - engagementDate;
+        const yearsPassed = Math.floor(timePassed / (1000 * 60 * 60 * 24 * 365.25));
+        const remainingAfterYears = timePassed % (1000 * 60 * 60 * 24 * 365.25);
+        const daysPassed = Math.floor(remainingAfterYears / (1000 * 60 * 60 * 24));
+        const hoursPassed = Math.floor((remainingAfterYears % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        
+        // Update years past display
+        document.getElementById('yearsPast').textContent = yearsPassed.toString().padStart(2, '0');
+        document.getElementById('daysPast').textContent = daysPassed.toString().padStart(2, '0');
+        document.getElementById('hoursPast').textContent = hoursPassed.toString().padStart(2, '0');
+        
+        // Calculate next anniversary (August 24 of current year or next year)
+        const currentYear = now.getFullYear();
+        let nextAnniversary = new Date(currentYear, 7, 24); // August 24 (month is 0-indexed)
+        
+        // If this year's anniversary has passed, use next year's
+        if (now > nextAnniversary) {
+          nextAnniversary = new Date(currentYear + 1, 7, 24);
+        }
+        
+        // Calculate time until next anniversary
+        const timeUntilAnniversary = nextAnniversary - now;
+        const daysUntilAnniversary = Math.floor(timeUntilAnniversary / (1000 * 60 * 60 * 24));
+        const hoursUntilAnniversary = Math.floor((timeUntilAnniversary % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        
+        document.getElementById('daysLeft').textContent = daysUntilAnniversary.toString().padStart(2, '0');
+        document.getElementById('hoursLeft').textContent = hoursUntilAnniversary.toString().padStart(2, '0');
+        
+        // Update section styling and labels
+        const yearsPastSection = document.getElementById('yearsPastSection');
+        yearsPastSection.style.display = 'block';
+        document.querySelector('.upcoming-section .counter-title').textContent = 'Days left for anniversary:';
+        
+      } else {
+        // Engagement hasn't happened yet, show countdown
+        const timeUntilEngagement = engagementDate - now;
+        const daysUntilEngagement = Math.floor(timeUntilEngagement / (1000 * 60 * 60 * 24));
+        const hoursUntilEngagement = Math.floor((timeUntilEngagement % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        
+        // Hide years past section since engagement hasn't happened
+        document.getElementById('yearsPastSection').style.display = 'none';
+        
+        // Show countdown to engagement
+        document.getElementById('daysLeft').textContent = daysUntilEngagement.toString().padStart(2, '0');
+        document.getElementById('hoursLeft').textContent = hoursUntilEngagement.toString().padStart(2, '0');
+        
+        // Update title to reflect countdown
+        document.querySelector('.upcoming-section .counter-title').textContent = 'Days left for engagement:';
+      }
+    }
+    
+    // Back button functionality
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.location.href = 'FirstKissDatingAppLanding.html';
+    });
+    
+    // Update counters immediately and then every minute
+    updateCounters();
+    setInterval(updateCounters, 60000); // Update every minute
+  </script>
+</body>
+</html>

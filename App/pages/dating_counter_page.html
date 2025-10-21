@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dating Counter | Romantic Milestone Tracker</title>
+  <meta name="description" content="Celebrate your dating milestone with a beautiful counter showing years past and days until your anniversary. Track your romantic relationship journey together.">
+  <meta name="keywords" content="dating counter, romantic milestone, anniversary tracker, couple goals, relationship counter">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dating Counter | Romantic Milestone Tracker">
+  <meta property="og:description" content="Celebrate your dating milestone with a beautiful counter showing years past and days until your anniversary.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Jua', cursive;
+      background-image: url('../assets/images/img_geminigeneratedimageswgir6swgir6swgi_3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Layout components */
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px 20px;
+      position: relative;
+    }
+    
+    .back-button {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      background-color: rgba(217, 217, 217, 0.8);
+      border: none;
+      border-radius: 25px;
+      padding: 12px 24px;
+      font-family: 'Jua', cursive;
+      font-size: 18px;
+      color: #f934ae;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .back-button:hover {
+      background-color: rgba(217, 217, 217, 0.9);
+      transform: scale(1.05);
+    }
+    
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 80px;
+    }
+    
+    .page-title {
+      font-size: 96px;
+      font-family: 'Jua', cursive;
+      font-weight: 400;
+      line-height: 120px;
+      text-align: center;
+      color: #f934ae;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      margin-bottom: 60px;
+    }
+    
+    .counter-section {
+      background-color: rgba(217, 217, 217, 0.8);
+      border-radius: 30px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px 30px;
+      margin-bottom: 40px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-title {
+      font-size: 36px;
+      font-family: 'Jua', cursive;
+      font-weight: 400;
+      text-align: center;
+      color: #f934ae;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .counter-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .time-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(176, 252, 255, 0.3);
+      border-radius: 20px;
+      padding: 20px;
+      min-width: 120px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+    
+    .time-number {
+      font-size: 48px;
+      font-family: 'Jua', cursive;
+      font-weight: 400;
+      color: #f934ae;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 8px;
+    }
+    
+    .time-label {
+      font-size: 18px;
+      font-family: 'Jua', cursive;
+      color: #b0fcff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .heart-decoration {
+      font-size: 24px;
+      color: #f934ae;
+      margin: 20px 0;
+      text-align: center;
+      animation: heartbeat 2s ease-in-out infinite;
+    }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .floating-heart {
+      position: absolute;
+      color: rgba(249, 52, 174, 0.3);
+      font-size: 20px;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    /* Responsive media queries */
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 64px;
+        line-height: 80px;
+        margin-bottom: 40px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .time-number {
+        font-size: 36px;
+      }
+      
+      .time-unit {
+        min-width: 100px;
+        padding: 15px;
+      }
+      
+      .counter-section {
+        padding: 30px 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main-container {
+        padding: 20px 15px;
+      }
+      
+      .page-title {
+        font-size: 48px;
+        line-height: 60px;
+      }
+      
+      .back-button {
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fromanticm5710back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body>
+  <div class="floating-hearts" id="floatingHearts"></div>
+  
+  <main class="main-container">
+    <button class="back-button" onclick="window.location.href='FirstKissDatingAppLanding.html'" aria-label="Go back to main page">
+      ← Back
+    </button>
+    
+    <div class="content-wrapper">
+      <h1 class="page-title">Dating</h1>
+      
+      <section class="counter-section">
+        <h2 class="section-title">Years Past:</h2>
+        <div class="counter-display" id="yearsPastDisplay">
+          <div class="time-unit">
+            <div class="time-number" id="yearsNumber">0</div>
+            <div class="time-label">Years</div>
+          </div>
+          <div class="time-unit">
+            <div class="time-number" id="daysNumber">0</div>
+            <div class="time-label">Days</div>
+          </div>
+          <div class="time-unit">
+            <div class="time-number" id="hoursNumber">0</div>
+            <div class="time-label">Hours</div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="heart-decoration">💕 💖 💕</div>
+      
+      <section class="counter-section">
+        <h2 class="section-title">Days left for anniversary:</h2>
+        <div class="counter-display" id="anniversaryCountdown">
+          <div class="time-unit">
+            <div class="time-number" id="annivDaysNumber">0</div>
+            <div class="time-label">Days</div>
+          </div>
+          <div class="time-unit">
+            <div class="time-number" id="annivHoursNumber">0</div>
+            <div class="time-label">Hours</div>
+          </div>
+          <div class="time-unit">
+            <div class="time-number" id="annivMinutesNumber">0</div>
+            <div class="time-label">Minutes</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Dating date: February 22, 2019
+    const datingDate = new Date('2019-02-22T00:00:00');
+    
+    function updateCounters() {
+      const now = new Date();
+      
+      // Calculate time elapsed since dating started
+      const timeDiff = now - datingDate;
+      const years = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 365.25));
+      const remainingAfterYears = timeDiff % (1000 * 60 * 60 * 24 * 365.25);
+      const days = Math.floor(remainingAfterYears / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((remainingAfterYears % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+      // Update years past display
+      document.getElementById('yearsNumber').textContent = years;
+      document.getElementById('daysNumber').textContent = days;
+      document.getElementById('hoursNumber').textContent = hours;
+      
+      // Calculate next anniversary (February 22 of current or next year)
+      const currentYear = now.getFullYear();
+      let nextAnniversary = new Date(currentYear, 1, 22); // February 22 of current year
+      
+      // If this year's anniversary has passed, move to next year
+      if (now > nextAnniversary) {
+        nextAnniversary = new Date(currentYear + 1, 1, 22);
+      }
+      
+      // Calculate time until next anniversary
+      const timeUntilAnniv = nextAnniversary - now;
+      const annivDays = Math.floor(timeUntilAnniv / (1000 * 60 * 60 * 24));
+      const annivHours = Math.floor((timeUntilAnniv % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const annivMinutes = Math.floor((timeUntilAnniv % (1000 * 60 * 60)) / (1000 * 60));
+      
+      // Update anniversary countdown display
+      document.getElementById('annivDaysNumber').textContent = annivDays;
+      document.getElementById('annivHoursNumber').textContent = annivHours;
+      document.getElementById('annivMinutesNumber').textContent = annivMinutes;
+    }
+    
+    // Create floating hearts animation
+    function createFloatingHeart() {
+      const heartsContainer = document.getElementById('floatingHearts');
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.innerHTML = '💖';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 2 + 's';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      
+      heartsContainer.appendChild(heart);
+      
+      // Remove heart after animation completes
+      setTimeout(() => {
+        if (heart.parentNode) {
+          heart.parentNode.removeChild(heart);
+        }
+      }, 7000);
+    }
+    
+    // Initialize counters and start updates
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCounters();
+      
+      // Update counters every minute
+      setInterval(updateCounters, 60000);
+      
+      // Create floating hearts periodically
+      setInterval(createFloatingHeart, 3000);
+      
+      // Create initial floating hearts
+      for (let i = 0; i < 3; i++) {
+        setTimeout(createFloatingHeart, i * 1000);
+      }
+    });
+  </script>
+</body>
+</html>

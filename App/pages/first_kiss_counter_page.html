@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Kiss | Romantic Milestone Counter</title>
+  <meta name="description" content="Celebrate your first kiss milestone with a beautiful counter showing years past since March 21, 2018 and days left until your anniversary.">
+  <meta name="keywords" content="first kiss, romantic milestone, couple counter, love anniversary, relationship tracker">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="First Kiss | Romantic Milestone Counter">
+  <meta property="og:description" content="Celebrate your first kiss milestone with a beautiful counter showing years past and days until anniversary.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Jua', cursive;
+      background-image: url('../assets/images/img_geminigeneratedimageswgir6swgir6swgi_3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Layout components */
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px 20px;
+      position: relative;
+    }
+    
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+    }
+    
+    /* Back button */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(217, 217, 217, 0.8);
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-family: 'Jua', cursive;
+      font-size: 16px;
+      color: #f934ae;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .back-button:hover {
+      background: rgba(217, 217, 217, 0.9);
+      transform: translateY(-2px);
+    }
+    
+    /* Title section */
+    .title-section {
+      text-align: center;
+      margin-bottom: 80px;
+      margin-top: 60px;
+    }
+    
+    .page-title {
+      font-size: 96px;
+      font-family: 'Jua', cursive;
+      font-weight: 400;
+      line-height: 120px;
+      color: #f934ae;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+    
+    .milestone-date {
+      font-size: 24px;
+      font-family: 'Jua', cursive;
+      color: #b0fcff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Counter sections */
+    .counters-container {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      width: 100%;
+    }
+    
+    .counter-section {
+      background: rgba(217, 217, 217, 0.85);
+      border-radius: 30px;
+      padding: 40px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .counter-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .counter-title {
+      font-size: 36px;
+      font-family: 'Jua', cursive;
+      color: #f934ae;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .counter-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .time-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 120px;
+    }
+    
+    .time-number {
+      font-size: 48px;
+      font-family: 'Jua', cursive;
+      color: #f934ae;
+      font-weight: 400;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 8px;
+    }
+    
+    .time-label {
+      font-size: 18px;
+      font-family: 'Jua', cursive;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Anniversary section styling */
+    .anniversary-section {
+      background: linear-gradient(135deg, rgba(249, 52, 174, 0.1), rgba(176, 252, 255, 0.1));
+      border: 2px solid rgba(249, 52, 174, 0.3);
+    }
+    
+    .anniversary-section .counter-title {
+      color: #b0fcff;
+    }
+    
+    .anniversary-section .time-number {
+      color: #b0fcff;
+      font-size: 52px;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 20px 15px;
+      }
+      
+      .page-title {
+        font-size: 64px;
+        line-height: 80px;
+      }
+      
+      .counter-title {
+        font-size: 28px;
+      }
+      
+      .time-number {
+        font-size: 36px;
+      }
+      
+      .anniversary-section .time-number {
+        font-size: 40px;
+      }
+      
+      .counter-display {
+        gap: 20px;
+      }
+      
+      .time-unit {
+        min-width: 100px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .page-title {
+        font-size: 48px;
+        line-height: 60px;
+      }
+      
+      .counter-section {
+        padding: 30px 20px;
+      }
+      
+      .counter-title {
+        font-size: 24px;
+      }
+      
+      .time-number {
+        font-size: 32px;
+      }
+      
+      .anniversary-section .time-number {
+        font-size: 36px;
+      }
+    }
+  </style>
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fromanticm5710back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body>
+  <button class="back-button" id="backButton" aria-label="Go back to landing page">← Back</button>
+  
+  <main class="main-container">
+    <button class="back-button" onclick="window.location.href='FirstKissDatingAppLanding.html'" aria-label="Go back to main page">
+      ← Back
+    </button>
+
+    <div class="content-wrapper">
+      <section class="title-section">
+        <h1 class="page-title">First Kiss</h1>
+        <p class="milestone-date">March 21, 2018</p>
+      </section>
+      
+      <div class="counters-container">
+        <section class="counter-section">
+          <h2 class="counter-title">Years Past:</h2>
+          <div class="counter-display">
+            <div class="time-unit">
+              <span class="time-number" id="yearsPast">00</span>
+              <span class="time-label">Years</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-number" id="daysPast">00</span>
+              <span class="time-label">Days</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-number" id="hoursPast">00</span>
+              <span class="time-label">Hours</span>
+            </div>
+          </div>
+        </section>
+        
+        <section class="counter-section anniversary-section">
+          <h2 class="counter-title">Days left for anniversary:</h2>
+          <div class="counter-display">
+            <div class="time-unit">
+              <span class="time-number" id="daysLeft">00</span>
+              <span class="time-label">Days</span>
+            </div>
+            <div class="time-unit">
+              <span class="time-number" id="hoursLeft">00</span>
+              <span class="time-label">Hours</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // First Kiss date: March 21, 2018
+    const firstKissDate = new Date('2018-03-21T00:00:00');
+    
+    function updateCounters() {
+      const now = new Date();
+      
+      // Calculate years past since first kiss
+      const timePassed = now - firstKissDate;
+      const yearsPassed = Math.floor(timePassed / (1000 * 60 * 60 * 24 * 365.25));
+      const remainingAfterYears = timePassed % (1000 * 60 * 60 * 24 * 365.25);
+      const daysPassed = Math.floor(remainingAfterYears / (1000 * 60 * 60 * 24));
+      const hoursPassed = Math.floor((remainingAfterYears % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+      // Calculate next anniversary (March 21 of current year or next year)
+      const currentYear = now.getFullYear();
+      let nextAnniversary = new Date(currentYear, 2, 21); // March 21 (month is 0-indexed)
+      
+      // If this year's anniversary has passed, use next year's
+      if (now > nextAnniversary) {
+        nextAnniversary = new Date(currentYear + 1, 2, 21);
+      }
+      
+      // Calculate time until next anniversary
+      const timeUntilAnniversary = nextAnniversary - now;
+      const daysUntilAnniversary = Math.floor(timeUntilAnniversary / (1000 * 60 * 60 * 24));
+      const hoursUntilAnniversary = Math.floor((timeUntilAnniversary % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+      // Update display elements
+      document.getElementById('yearsPast').textContent = yearsPassed.toString().padStart(2, '0');
+      document.getElementById('daysPast').textContent = daysPassed.toString().padStart(2, '0');
+      document.getElementById('hoursPast').textContent = hoursPassed.toString().padStart(2, '0');
+      
+      document.getElementById('daysLeft').textContent = daysUntilAnniversary.toString().padStart(2, '0');
+      document.getElementById('hoursLeft').textContent = hoursUntilAnniversary.toString().padStart(2, '0');
+    }
+    
+    // Back button functionality
+    document.getElementById('backButton').addEventListener('click', function() {
+      window.location.href = 'FirstKissDatingAppLanding.html';
+    });
+    
+    // Update counters immediately and then every minute
+    updateCounters();
+    setInterval(updateCounters, 60000); // Update every minute
+  </script>
+</body>
+</html>
